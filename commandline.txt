@@ -1,0 +1,7 @@
+
+# php rx.run.php [port]  -- port to listen to connections
+php rx.run.php 1020
+
+# php tx.run.php [rip] [rport] [tag] [timeout] -- tag is used to write bz64jsonl log files by receiver
+php tx.run.php 127.0.0.1 1020 sometag 10
+
