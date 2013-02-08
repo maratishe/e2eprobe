@@ -70,11 +70,10 @@ int main( int argc, char **argv) {
 	while ( 1) { // while lock file is on
 		now = getime();
 		int status = recvfrom( sock, buf, psize, 0, NULL, 0);	// first packet is 100 bytes
-		if ( lastime != -1 && now - lastime > 3) break;	// timeout
-		if ( pos >= probesize  - 1) break;
+		if ( ( lastime != -1 && now - lastime > 3) || now - start > 30) break;	// timeout
 		if ( status != psize) continue;
 		sscanf( buf, "%d", &one); // packet id
-		if ( one > probesize) continue;
+		if ( one >= 20000) continue;
 		if ( lastime == -1) lastime = now;
 		data[ one] = ( int)( 1000000.0 * ( now - lastime));
 		pos = one; lastime = now;

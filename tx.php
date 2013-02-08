@@ -102,8 +102,7 @@ while ( tsystem() - $lastime < $timeout) {
 	extract( $msg); break;
 }
 if ( ! isset( $status)) die( "\n");
-$probesize2 = $probesize * round( ( $pspace1 - $pspace2) / $step);
-$c = "$CDIR/probe.udp.igi.tx $rip $port2 $psize $probesize2 $pspace1 $step $pspace2";
+$c = "$CDIR/probe.udp.igi.tx $rip $port2 $psize $probesize $pspace1 $step $pspace2 > igi.log";
 echo "c[$c]\n"; procat( $c);
 $lastime = tsystem(); unset( $status);
 while ( tsystem() - $lastime < $timeout) {

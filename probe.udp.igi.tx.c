@@ -71,6 +71,7 @@ int main( int argc, char **argv) {
 			status = sendto( sock, buf, psize, 0, ( struct sockaddr *)&addrout, sizeof( struct sockaddr_in));
 			while ( 1000000.0 * ( now - before) < pspace) now = getime();
 			ltime = time; id++;
+			//printf( " %d", id);
 		}
 		
 	}
