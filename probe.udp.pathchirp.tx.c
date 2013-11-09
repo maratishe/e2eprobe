@@ -41,7 +41,7 @@ int main( int argc, char **argv) {
 	int psize = atoi( argv[ 3]);
 	int probesize = atoi( argv[ 4]);	// usec
 	int pspace = atoi( argv[ 5]);
-	int pspaceratio = atof( argv[ 6]);
+	double pspaceratio = atof( argv[ 6]);
 	
 	struct sockaddr_in addrout;	// the address out
 	addrout.sin_family = AF_INET;
